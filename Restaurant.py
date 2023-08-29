@@ -20,3 +20,9 @@ class Restaurant:
          unique_customers.add(review.customer().full_name())
         return list(unique_customers)
     
+    def starrating(self):
+        if not self.reviews:
+            return 0
+
+        sumofrating = sum([review.rating for review in self.reviews])  
+        return sumofrating/ len(self.reviews)
